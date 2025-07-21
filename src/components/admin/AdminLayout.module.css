@@ -1,0 +1,59 @@
+/* Sidebar trái */
+.sider {
+  background-color: #001529 !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding: 16px;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Menu trái */
+.menu .ant-menu-item-selected {
+  background-color: #1890ff !important;
+  color: white !important;
+  font-weight: 500;
+}
+
+.menu a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  display: block;
+}
+
+.menu a:hover {
+  color: #40a9ff;
+}
+
+/* Layout bên phải */
+.mainLayout {
+  padding: 16px;
+  background: #fff;
+}
+
+/* Header nội dung */
+.header {
+  height: 64px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nội dung chính */
+.content {
+  margin-top: 16px;
+  padding: 24px 24px 24px 32px; /* Padding trái để tránh dính vào menu */
+  background-color: #f0f2f5;
+  border-radius: 8px;
+  min-height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
