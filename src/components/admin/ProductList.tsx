@@ -97,7 +97,7 @@ function ProductList() {
     },
     {
       title: "Actions",
-      render: (_: any, record: Product) => (
+      render: (_: unknown, record: Product) => (
         <Space>
           <Button type="link" onClick={() => navigate(`/edit/${record.id}`)}>Sửa</Button>
           <Popconfirm

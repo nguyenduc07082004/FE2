@@ -1,11 +1,18 @@
 // src/pages/ProductCreate.tsx
 import { Button, Form, Input, InputNumber, message } from "antd";
 import { useNavigate } from "react-router-dom";
+type ProductForm = {
+  name: string;
+  price: number;
+  image?: string;
+  description?: string;
+};
+
 
 function ProductCreate() {
   const navigate = useNavigate();
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: ProductForm) => {
     try {
       await fetch("http://localhost:3001/products", {
         method: "POST",
@@ -14,7 +21,7 @@ function ProductCreate() {
       });
       message.success("Thêm sản phẩm thành công!");
       navigate("/products");
-    } catch (error) {
+    } catch  {
       message.error("Lỗi khi thêm sản phẩm!");
     }
   };

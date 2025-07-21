@@ -2,6 +2,12 @@
 import { Button, Form, Input, InputNumber, message } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect} from "react";
+type ProductForm = {
+  name: string;
+  price: number;
+  image?: string;
+  description?: string;
+};
 
 function ProductEdit() {
   const { id } = useParams<{ id: string }>();
@@ -17,7 +23,7 @@ function ProductEdit() {
     fetchProduct();
   }, [id, form]);
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: ProductForm) => {
     try {
       await fetch(`http://localhost:3001/products/${id}`, {
         method: "PUT",
@@ -26,7 +32,7 @@ function ProductEdit() {
       });
       message.success("Cập nhật sản phẩm thành công!");
       navigate("/products");
-    } catch (error) {
+    } catch {
       message.error("Lỗi khi cập nhật sản phẩm!");
     }
   };

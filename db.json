@@ -8,11 +8,11 @@
       "id": "1"
     },
     {
-      "id": "2",
-      "name": "Giày thể thao Nike Air",
+      "name": "Giày  Nike Air",
       "price": 1350000,
       "image": "https://bizweb.dktcdn.net/100/340/361/products/7-c640ba72-6828-4494-9f4d-356628abf9ab.jpg?v=1722053355330",
-      "description": "Giày thể thao cao cấp Nike"
+      "description": "Giày thể thao cao cấp Nike",
+      "id": "2"
     },
     {
       "id": "3",
@@ -50,11 +50,11 @@
       "description": "Áo sơ mi dài tay Zara thanh lịch"
     },
     {
-      "id": "8",
-      "name": "Giày thể thao Converse",
+      "name": "Giày  Converse",
       "price": 690000,
       "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQOvQNkCplLnyfkbwH50--ZVez_5qgha6WMukhMZ23mQjMbf3TszvoYGJzyUXtwxUzzlutDdL8e_efkrA8Dhl1UFf-QoJ3c-fpysxKWlG9hP7bUfsv3BDyoeV6r7MrnQg8rtW1s5ouM&usqp=CAc",
-      "description": "Giày Converse classic màu trắng"
+      "description": "Giày Converse classic màu trắng",
+      "id": "8"
     },
     {
       "id": "9",
@@ -64,97 +64,83 @@
       "description": "Áo hoodie cotton dày dặn, unisex"
     },
     {
-      "id": "10",
-      "name": "Balo laptop Xiaomi",
+      "name": "Balo laptop",
       "price": 580000,
       "image": "data:image/webp;base64,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",
-      "description": "Balo Xiaomi chống nước, chống sốc laptop"
-    },
-    {
-      "id": "8663",
-      "name": "quần dsq",
-      "price": 500000,
-      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSvi2ngxYcOfk3noH7JLQoumf7QFwB5UlwArZClwD-X2Pyu4UPfNUzbgLDrWU3PTcZvjdy32XrUbEQfiiSGnTMxGpb3qlUX-KVQYhSqwLPDnnSU5eBOhFoECPGweMZsNbIZi4LEWw&usqp=CAc",
-      "description": "màu xanh đậm trẻ trung năng động ạ"
-    },
-    {
-      "id": "f679",
-      "name": "quần adidas 3 sọc",
-      "price": 2100000,
-      "image": "https://bizweb.dktcdn.net/thumb/1024x1024/100/410/538/products/69-156f4a37-c9c4-4513-af2d-8b075319cd2e.jpg",
-      "description": "quá okok"
+      "description": "Balo Xiaomi chống nước, chống sốc laptop",
+      "id": "10"
     }
   ],
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "áo"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "quần"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "túi"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "giày"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "mũ"
     }
   ],
   "brands": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Uniqlo",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/UNIQLO_logo.svg/2048px-UNIQLO_logo.svg.png"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Nike",
       "logo": "https://1000logos.net/wp-content/uploads/2017/03/Nike-Logo.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Adidas",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Puma",
       "logo": "https://upload.wikimedia.org/wikipedia/vi/f/ff/Puma_AG.svg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Zara",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Zara_Logo.svg"
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "admin",
       "email": "admin@example.com",
       "role": "admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "user01",
       "email": "user01@example.com",
       "role": "user"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "user02",
       "email": "user02@example.com",
       "role": "user"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "user03",
       "email": "user03@example.com",
       "role": "user"
@@ -162,7 +148,7 @@
   ],
   "orders": [
     {
-      "id": 1,
+      "id": "1",
       "customer": "Nguyễn Văn A",
       "email": "a@example.com",
       "phone": "0901234567",
@@ -186,7 +172,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "2",
       "customer": "Trần Thị B",
       "email": "b@example.com",
       "phone": "0902345678",
@@ -204,7 +190,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "customer": "Lê Văn C",
       "email": "c@example.com",
       "phone": "0903456789",
@@ -224,21 +210,21 @@
   ],
   "reports": [
     {
-      "id": 1,
+      "id": "1",
       "month": "2025-05",
       "totalOrders": 12,
       "totalRevenue": 14500000,
       "bestSellingProduct": "Áo thun nam Uniqlo"
     },
     {
-      "id": 2,
+      "id": "2",
       "month": "2025-06",
       "totalOrders": 20,
       "totalRevenue": 26700000,
       "bestSellingProduct": "Giày thể thao Nike Air"
     },
     {
-      "id": 3,
+      "id": "3",
       "month": "2025-07",
       "totalOrders": 18,
       "totalRevenue": 22100000,
