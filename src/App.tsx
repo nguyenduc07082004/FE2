@@ -10,6 +10,7 @@ import BrandList from './components/admin/BrandList';
 import ReportList from './components/admin/ReportDashboard';
 import ProductCreate from './components/admin/ProductCreate';
 import ProductEdit from './components/admin/ProductEdit';
+import ProductDetail from './components/admin/ProductDetail';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path:"/edit/:id",
     element: <ProductEdit />, 
+  },
+  {
+    path:"/detail/:id",
+    element: <ProductDetail />, 
   }
 ]);
 
