@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
-import { Image, Input, Table } from "antd";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { Button, Image, Input, Popconfirm, Space, Table, message } from "antd";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import HomeButton from "./HomeButton";
@@ -14,7 +14,7 @@ interface Product {
   description?: string;
 }
 
-// 🔍 Hàm loại bỏ dấu tiếng Việt
+// 🔍 Loại bỏ dấu tiếng Việt
 function removeVietnameseTones(str: string) {
   return str
     .normalize("NFD")
@@ -28,12 +28,11 @@ function removeVietnameseTones(str: string) {
 function ProductList() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const queryClient = useQueryClient();
 
-  // Lấy keyword từ URL
   const rawKeyword = searchParams.get("name") || "";
   const [searchText, setSearchText] = useState(rawKeyword);
 
-  // Fetch toàn bộ product từ json-server
   const fetchProducts = async () => {
     const res = await fetch("http://localhost:3001/products");
     return res.json();
@@ -44,7 +43,26 @@ function ProductList() {
     queryFn: fetchProducts,
   });
 
-  // 🔍 Lọc theo từ khóa không dấu
+  // 🔥 Mutation: Xoá sản phẩm
+  const deleteMutation = useMutation({
+    mutationFn: async (id: string) => {
+      await fetch(`http://localhost:3001/products/${id}`, {
+        method: "DELETE",
+      });
+    },
+    onSuccess: () => {
+      message.success("Đã xoá sản phẩm");
+      queryClient.invalidateQueries({ queryKey: ["products"] });
+    },
+    onError: () => {
+      message.error("Xoá thất bại");
+    },
+  });
+
+  const handleDelete = (id: string) => {
+    deleteMutation.mutate(id);
+  };
+
   const filteredData = data?.filter((product) => {
     const name = removeVietnameseTones(product.name || "");
     const keyword = removeVietnameseTones(rawKeyword);
@@ -77,8 +95,23 @@ function ProductList() {
       title: "Description",
       dataIndex: "description",
     },
+    {
+      title: "Actions",
+      render: (_: any, record: Product) => (
+        <Space>
+          <Button type="link" onClick={() => navigate(`/edit/${record.id}`)}>Sửa</Button>
+          <Popconfirm
+            title="Xác nhận xoá?"
+            onConfirm={() => handleDelete(record.id)}
+            okText="Xoá"
+            cancelText="Huỷ"
+          >
+            <Button danger type="link">Xoá</Button>
+          </Popconfirm>
+        </Space>
+      ),
+    },
   ];
-
 
   const handleSearch = (value: string) => {
     setSearchText(value);
@@ -98,9 +131,13 @@ function ProductList() {
           onSearch={handleSearch}
           style={{ maxWidth: 400, marginBottom: 20 }}
         />
-        <h1>Quản lý sản phẩm</h1>
-        <HomeButton/>
-
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
+          <h1>Quản lý sản phẩm</h1>
+          <Space>
+            <HomeButton />
+            <Button type="primary" onClick={() => navigate("/create")}>+ Thêm sản phẩm</Button>
+          </Space>
+        </div>
 
         {error && <p style={{ color: "red" }}>Lỗi: {(error as Error).message}</p>}
 

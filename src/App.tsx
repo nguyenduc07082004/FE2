@@ -8,6 +8,8 @@ import UserList from './components/admin/UserList';
 import OrderList from './components/admin/OrderList';
 import BrandList from './components/admin/BrandList';
 import ReportList from './components/admin/ReportDashboard';
+import ProductCreate from './components/admin/ProductCreate';
+import ProductEdit from './components/admin/ProductEdit';
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
   {
     path: "/reports",
     element:<ReportList/>
+  },
+  {
+    path:"/create",
+    element: <ProductCreate />, 
+  },
+  {
+    path:"/edit/:id",
+    element: <ProductEdit />, 
   }
 ]);
 
