@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { Table } from "antd";
+import HomeButton from "./HomeButton";
 
 
 function CategoryList() {
@@ -26,6 +27,8 @@ function CategoryList() {
 
   return (
     <div>
+        <h1>Danh sách danh mục</h1>
+        <HomeButton/>
       <Table
         dataSource={data}
         columns={columns}

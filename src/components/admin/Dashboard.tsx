@@ -1,7 +1,10 @@
+import HomeButton from "./HomeButton";
+
 const Dashboard = () => {
     return (
       <div className="dashboard-container">
         <h1>Admin Dashboard</h1>
+        <HomeButton/>
         <p>Chào mừng bạn đến với trang quản trị!</p>
         <div className="admin-stats">
           <div className="stat-box">

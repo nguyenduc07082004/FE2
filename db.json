@@ -78,8 +78,142 @@
     { "id": 4, "name": "giày" },
     { "id": 5, "name": "mũ" }
   ],
-  "brands": [],
-  "users": [],
-  "orders": [],
-  "reports": []
+  "brands": [
+     {
+      "id": 1,
+      "name": "Uniqlo",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/UNIQLO_logo.svg/2048px-UNIQLO_logo.svg.png"
+    },
+    {
+      "id": 2,
+      "name": "Nike",
+      "logo": "https://1000logos.net/wp-content/uploads/2017/03/Nike-Logo.png"
+    },
+    {
+      "id": 3,
+      "name": "Adidas",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
+    },
+    {
+      "id": 4,
+      "name": "Puma",
+      "logo": "https://upload.wikimedia.org/wikipedia/vi/f/ff/Puma_AG.svg"
+    },
+    {
+      "id": 5,
+      "name": "Zara",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Zara_Logo.svg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@example.com",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "name": "user01",
+      "email": "user01@example.com",
+      "role": "user"
+    },
+    {
+      "id": 3,
+      "name": "user02",
+      "email": "user02@example.com",
+      "role": "user"
+    },
+    {
+      "id": 4,
+      "name": "user03",
+      "email": "user03@example.com",
+      "role": "user"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "customer": "Nguyễn Văn A",
+      "email": "a@example.com",
+      "phone": "0901234567",
+      "address": "123 Đường ABC, Hà Nội",
+      "total": 1600000,
+      "status": "pending",
+      "createdAt": "2025-07-21T09:30:00Z",
+      "items": [
+        {
+          "productId": 1,
+          "name": "Áo thun nam Uniqlo",
+          "price": 250000,
+          "quantity": 2
+        },
+        {
+          "productId": 2,
+          "name": "Giày thể thao Nike Air",
+          "price": 1350000,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "customer": "Trần Thị B",
+      "email": "b@example.com",
+      "phone": "0902345678",
+      "address": "456 Đường XYZ, TP.HCM",
+      "total": 2700000,
+      "status": "shipped",
+      "createdAt": "2025-07-20T15:10:00Z",
+      "items": [
+        {
+          "productId": 2,
+          "name": "Giày thể thao Nike Air",
+          "price": 1350000,
+          "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "customer": "Lê Văn C",
+      "email": "c@example.com",
+      "phone": "0903456789",
+      "address": "789 Đường DEF, Đà Nẵng",
+      "total": 250000,
+      "status": "delivered",
+      "createdAt": "2025-07-19T12:00:00Z",
+      "items": [
+        {
+          "productId": 1,
+          "name": "Áo thun nam Uniqlo",
+          "price": 250000,
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "reports": [
+     {
+      "id": 1,
+      "month": "2025-05",
+      "totalOrders": 12,
+      "totalRevenue": 14500000,
+      "bestSellingProduct": "Áo thun nam Uniqlo"
+    },
+    {
+      "id": 2,
+      "month": "2025-06",
+      "totalOrders": 20,
+      "totalRevenue": 26700000,
+      "bestSellingProduct": "Giày thể thao Nike Air"
+    },
+    {
+      "id": 3,
+      "month": "2025-07",
+      "totalOrders": 18,
+      "totalRevenue": 22100000,
+      "bestSellingProduct": "Áo hoodie Unisex Adidas"
+    }
+  ]
 }

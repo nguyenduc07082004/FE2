@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Image, Input, Table } from "antd";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useState } from "react";
+import HomeButton from "./HomeButton";
 
 const { Search } = Input;
 
@@ -97,6 +98,9 @@ function ProductList() {
           onSearch={handleSearch}
           style={{ maxWidth: 400, marginBottom: 20 }}
         />
+        <h1>Quản lý sản phẩm</h1>
+        <HomeButton/>
+
 
         {error && <p style={{ color: "red" }}>Lỗi: {(error as Error).message}</p>}
 

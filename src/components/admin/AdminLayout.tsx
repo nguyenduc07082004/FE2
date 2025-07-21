@@ -52,6 +52,8 @@ const AdminLayout = () => {
           <Button danger onClick={handleLogout}>Đăng xuất</Button>
         </div>
         <Content className={styles.content}>
+          <h1>Trang chủ</h1>
+      <p>Chào mừng bạn đến với trang chủ của chúng tôi!</p>
           <Outlet />
         </Content>
       </Layout>
