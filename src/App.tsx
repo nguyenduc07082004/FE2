@@ -11,11 +11,16 @@ import ReportList from './components/admin/ReportDashboard';
 import ProductCreate from './components/admin/ProductCreate';
 import ProductEdit from './components/admin/ProductEdit';
 import ProductDetail from './components/admin/ProductDetail';
+import ClientLayout from './components/client/ClientLayout';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/admin",
     element: <AdminLayout />,
+  },
+  {
+    path: "/client",
+    element: <ClientLayout />,
   },
   {
     path: "/dashboard",
