@@ -1,7 +1,8 @@
 // src/pages/ProductEdit.tsx
 import { Button, Form, Input, InputNumber, message } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect} from "react";
+import { useEffect } from "react";
+
 type ProductForm = {
   name: string;
   price: number;
@@ -41,18 +42,41 @@ function ProductEdit() {
     <div style={{ maxWidth: 600, margin: "0 auto", padding: 20 }}>
       <h2>Chỉnh sửa sản phẩm</h2>
       <Form form={form} layout="vertical" onFinish={onFinish}>
-        <Form.Item name="name" label="Tên sản phẩm" rules={[{ required: true }]}>
+        <Form.Item
+          name="name"
+          label="Tên sản phẩm"
+          rules={[
+            { required: true, message: "Tên sản phẩm là bắt buộc" },
+            { min: 3, message: "Tên sản phẩm phải có ít nhất 3 ký tự" },
+          ]}
+        >
           <Input />
         </Form.Item>
-        <Form.Item name="price" label="Giá" rules={[{ required: true }]}>
+
+        <Form.Item
+          name="price"
+          label="Giá"
+          rules={[
+            { required: true, message: "Giá là bắt buộc" },
+            {
+              validator: (_, value) =>
+                value >= 0
+                  ? Promise.resolve()
+                  : Promise.reject("Giá phải là số không âm"),
+            },
+          ]}
+        >
           <InputNumber min={0} style={{ width: "100%" }} />
         </Form.Item>
+
         <Form.Item name="image" label="Ảnh (URL)">
           <Input />
         </Form.Item>
+
         <Form.Item name="description" label="Mô tả">
           <Input.TextArea rows={4} />
         </Form.Item>
+
         <Form.Item>
           <Button type="primary" htmlType="submit">
             Cập nhật
