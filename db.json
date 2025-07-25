@@ -1,17 +1,10 @@
 {
   "products": [
     {
-      "name": "Áo thun nam Uniqlo",
-      "price": 250000,
-      "image": "https://im.uniqlo.com/global-cms/spa/resb576444db6dc90a64004a9843ac77151fr.jpg",
-      "description": "linh",
-      "id": "1"
-    },
-    {
       "name": "Giày  Nike Air",
       "price": 1350000,
       "image": "https://bizweb.dktcdn.net/100/340/361/products/7-c640ba72-6828-4494-9f4d-356628abf9ab.jpg?v=1722053355330",
-      "description": "Giày thể thao cao cấp Nike",
+      "description": "okoko",
       "id": "2"
     },
     {

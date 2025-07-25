@@ -12,6 +12,7 @@ import ProductCreate from './components/admin/ProductCreate';
 import ProductEdit from './components/admin/ProductEdit';
 import ProductDetail from './components/admin/ProductDetail';
 import ClientLayout from './components/client/ClientLayout';
+import ProductListClient from './components/client/ProductListClient';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/client",
     element: <ClientLayout />,
+    children :[{
+      index:true,
+      element :<ProductListClient/>
+    }]
   },
   {
     path: "/dashboard",

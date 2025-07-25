@@ -1,10 +1,9 @@
-// src/components/ProductCard.tsx
 import { Card } from "antd";
 
 const { Meta } = Card;
 
 type Product = {
-  id: string;
+  id: string
   name: string;
   price: number;
   image: string;
@@ -16,13 +15,24 @@ type Props = {
 };
 
 const ProductCard = ({ product }: Props) => {
+  if (!product) return null;
+
   return (
     <Card
       hoverable
       style={{ width: 250 }}
-      cover={<img alt={product.name} src={product.image} style={{ height: 200, objectFit: "cover" }} />}
+      cover={
+        <img
+          alt={product.name}
+          src={product.image || "https://via.placeholder.com/250x200"}
+          style={{ height: 200, objectFit: "cover" }}
+        />
+      }
     >
-      <Meta title={product.name} description={`Giá: ${product.price.toLocaleString()}₫`} />
+      <Meta
+        title={product.name}
+        description={`Giá: ${product.price.toLocaleString()}₫`}
+      />
       <p style={{ marginTop: 8 }}>{product.description}</p>
     </Card>
   );

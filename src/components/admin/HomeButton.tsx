@@ -9,7 +9,7 @@ const HomeButton = () => {
     <Button
       type="primary"
       icon={<HomeOutlined />}
-      onClick={() => navigate("/")}
+      onClick={() => navigate("/admin")}
     >
       Trang chủ
     </Button>
