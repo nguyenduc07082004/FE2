@@ -13,6 +13,9 @@ import ProductEdit from './components/admin/ProductEdit';
 import ProductDetail from './components/admin/ProductDetail';
 import ClientLayout from './components/client/ClientLayout';
 import ProductListClient from './components/client/ProductListClient';
+import OrderPage from './components/client/OrderPage';
+import ContactPage from './components/client/ContactPage';
+import AboutPage from './components/client/AboutPage';
 
 const router = createBrowserRouter([
   {
@@ -20,12 +23,16 @@ const router = createBrowserRouter([
     element: <AdminLayout />,
   },
   {
-    path: "/client",
+    path: "/",
     element: <ClientLayout />,
     children :[{
       index:true,
       element :<ProductListClient/>
     }]
+  },
+  {
+    path: "/productsl",
+    element: <ProductListClient />,
   },
   {
     path: "/dashboard",
@@ -66,7 +73,19 @@ const router = createBrowserRouter([
   {
     path:"/detail/:id",
     element: <ProductDetail />, 
-  }
+  },
+  {
+  path: "/ordersl",
+  element: <OrderPage />
+},
+{
+  path: "/contact",
+  element: <ContactPage />
+},
+{
+  path: "/about",
+  element: <AboutPage />
+}
 ]);
 
 function App() {

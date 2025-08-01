@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "name": "Giày  Nike Air",
-      "price": 1350000,
-      "image": "https://bizweb.dktcdn.net/100/340/361/products/7-c640ba72-6828-4494-9f4d-356628abf9ab.jpg?v=1722053355330",
-      "description": "okoko",
-      "id": "2"
-    },
-    {
       "id": "3",
       "name": "Quần jeans Levi's",
       "price": 750000,

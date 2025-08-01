@@ -1,6 +1,7 @@
 import { Layout, Menu, Button } from "antd";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import styles from "./AdminLayout.module.css";
+import Header from "./Header";
 
 const { Sider, Content } = Layout;
 
@@ -55,6 +56,7 @@ const AdminLayout = () => {
           <h1>Trang chủ</h1>
       <p>Chào mừng bạn đến với trang chủ của chúng tôi!</p>
           <Outlet />
+          <Header/>
         </Content>
       </Layout>
     </Layout>

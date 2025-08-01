@@ -1,9 +1,11 @@
-import { Card } from "antd";
+// src/components/ProductCard.tsx
+import { Card, Button } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const { Meta } = Card;
 
 type Product = {
-  id: string
+  id: string;
   name: string;
   price: number;
   image: string;
@@ -15,7 +17,16 @@ type Props = {
 };
 
 const ProductCard = ({ product }: Props) => {
-  if (!product) return null;
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    // Chuyển sang trang đơn hàng
+    navigate("/ordersl");
+  };
 
   return (
     <Card
@@ -24,7 +35,7 @@ const ProductCard = ({ product }: Props) => {
       cover={
         <img
           alt={product.name}
-          src={product.image || "https://via.placeholder.com/250x200"}
+          src={product.image}
           style={{ height: 200, objectFit: "cover" }}
         />
       }
@@ -34,6 +45,15 @@ const ProductCard = ({ product }: Props) => {
         description={`Giá: ${product.price.toLocaleString()}₫`}
       />
       <p style={{ marginTop: 8 }}>{product.description}</p>
+
+      {/* Nút thêm vào giỏ hàng */}
+      <Button
+        type="primary"
+        onClick={handleAddToCart}
+        style={{ marginTop: 12, width: "100%" }}
+      >
+        🛒 Thêm vào giỏ
+      </Button>
     </Card>
   );
 };

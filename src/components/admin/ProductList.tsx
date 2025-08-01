@@ -73,7 +73,7 @@ function ProductList() {
     {
       title: "ID",
       dataIndex: "id",
-      render: (id: number) => <Link to={`/detail/${id}`}>ID: {id}</Link>,
+      render: (id: string) => <Link to={`/detail/${id}`}>ID: {id}</Link>,
     },
     {
       title: "Name",
