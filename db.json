@@ -1,11 +1,11 @@
 {
   "products": [
     {
-      "id": "3",
       "name": "Quần jeans Levi's",
-      "price": 750000,
+      "price": 80000,
       "image": "data:image/jpeg;base64,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",
-      "description": "Quần jeans nam Levi's kiểu cổ điển"
+      "description": "Quần jeans nam Levi's kiểu cổ điển",
+      "id": "3"
     },
     {
       "id": "4",
@@ -109,27 +109,45 @@
   "users": [
     {
       "id": "1",
-      "name": "admin",
+      "fullName": "Admin Nguyễn",
       "email": "admin@example.com",
+      "password": "admin123",
       "role": "admin"
     },
     {
-      "id": "2",
-      "name": "user01",
-      "email": "user01@example.com",
-      "role": "user"
+      "email": "duanpham@gmail.com",
+      "password": "$2a$10$4KD36YC.rsyshoIh2NUpdu1cAW4hud4BgvTeidxWL7pV8Cv9BIkIy",
+      "fullName": "Phạm Văn Duẩn",
+      "role": "customer",
+      "id": "GeYLNRL"
     },
     {
-      "id": "3",
-      "name": "user02",
-      "email": "user02@example.com",
-      "role": "user"
+      "email": "duanpham123@gmail.com",
+      "password": "$2a$10$1NM0xU8/0Tky6.oKwET7nO9Qk0Tcj1iqDANo6M8.nw2E6zOiGEB2e",
+      "fullName": "Phạm Văn Duẩn",
+      "role": "customer",
+      "id": "p9FA5qH"
     },
     {
-      "id": "4",
-      "name": "user03",
-      "email": "user03@example.com",
-      "role": "user"
+      "email": "duanpham1236@gmail.com",
+      "password": "$2a$10$oqTOymJkd8A5bUAuunhliuhhWoDJN8hVYRIpKmhjPMLKDdtVmqESG",
+      "fullName": "Phạm Văn Duẩn",
+      "role": "customer",
+      "id": "RHAJL7h"
+    },
+    {
+      "email": "duanpham0109@gmail.com",
+      "password": "$2a$10$/2dKy4mzdsH5JLkmVYi9XevKn1Hxm76MXqdnIbVevBx8DOqlOncSW",
+      "fullName": "Phạm Văn Duẩn",
+      "role": "customer",
+      "id": "Xq9qX56"
+    },
+    {
+      "email": "duanpham01091@gmail.com",
+      "password": "$2a$10$294gY8L.RHosZGJsnk4A8OQjXxZwqkwzf8VtzCyyicTyCErKEyx0m",
+      "fullName": "Phạm Văn Duẩn",
+      "role": "customer",
+      "id": "5Jz2FUs"
     }
   ],
   "orders": [

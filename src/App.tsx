@@ -16,6 +16,8 @@ import ProductListClient from './components/client/ProductListClient';
 import OrderPage from './components/client/OrderPage';
 import ContactPage from './components/client/ContactPage';
 import AboutPage from './components/client/AboutPage';
+import Login from './components/client/login';
+import Register from './components/client/register';
 
 const router = createBrowserRouter([
   {
@@ -85,6 +87,14 @@ const router = createBrowserRouter([
 {
   path: "/about",
   element: <AboutPage />
+},
+{
+  path: "/login",
+  element: <Login />
+},
+{
+  path: "/register",
+  element: <Register />
 }
 ]);
 

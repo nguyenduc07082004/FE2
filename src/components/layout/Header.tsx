@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 const Header = () => {
   const [user, setUser] = useState<{ fullName: string } | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -13,13 +12,7 @@ const Header = () => {
     }
   }, []);
 
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      navigate(`/products?search=${searchQuery}`);
-      setSearchQuery("");
-    }
-  };
+ 
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -65,20 +58,6 @@ const Header = () => {
             </li>
           </ul>
 
-          {/* Form tìm kiếm */}
-          <form className="d-flex me-3" onSubmit={handleSearchSubmit}>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Tìm kiếm..."
-              aria-label="Search"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <button className="btn btn-outline-light" type="submit">
-              <i className="fas fa-search"></i>
-            </button>
-          </form>
 
           {/* Tài khoản, đơn hàng, giỏ hàng */}
           <ul className="navbar-nav">
@@ -123,7 +102,7 @@ const Header = () => {
             )}
 
             <li className="nav-item">
-              <Link className="nav-link" to="/orders">
+              <Link className="nav-link" to="/ordersl">
                 <i className="fas fa-box"></i> Đơn hàng
               </Link>
             </li>

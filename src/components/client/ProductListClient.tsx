@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { Row, Col, Spin, Alert } from "antd";
 import ProductCard from "./ProductCard";
+import { useProductSearch } from "../hook/search";
+import ProductSearchForm from "../form/SearchForm";
 
 type Product = {
   id: string;
@@ -10,6 +12,16 @@ type Product = {
   description: string;
   categoryId?: string;
 };
+
+function removeVietnameseTones(str: string) {
+  return str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/đ/g, "d")
+    .replace(/Đ/g, "D")
+    .toLowerCase()
+    .trim();
+}
 
 const fetchProducts = async (): Promise<Product[]> => {
   const res = await fetch("http://localhost:3001/products");
@@ -28,8 +40,15 @@ const ProductListClient = () => {
     queryFn: fetchProducts,
   });
 
-  if (isLoading) return <Spin tip="Đang tải sản phẩm..." />;
+  const { searchText, setSearchText, handleSearch, rawKeyword } = useProductSearch();
 
+  const filteredData = products.filter((product) => {
+    const name = removeVietnameseTones(product.name || "");
+    const keyword = removeVietnameseTones(rawKeyword);
+    return name.includes(keyword);
+  });
+
+  if (isLoading) return <Spin tip="Đang tải sản phẩm..." />;
   if (isError)
     return (
       <Alert
@@ -40,13 +59,20 @@ const ProductListClient = () => {
     );
 
   return (
-    <Row gutter={[16, 16]}>
-      {products.map((product) => (
-        <Col span={6} key={product.id}>
-          <ProductCard product={product} />
-        </Col>
-      ))}
-    </Row>
+    <div>
+      <ProductSearchForm
+        searchText={searchText}
+        setSearchText={setSearchText}
+        onSearch={handleSearch}
+      />
+      <Row gutter={[16, 16]}>
+        {filteredData.map((product) => (
+          <Col span={6} key={product.id}>
+            <ProductCard product={product} />
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 };
 

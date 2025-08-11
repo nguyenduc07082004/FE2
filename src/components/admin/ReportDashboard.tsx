@@ -6,7 +6,7 @@ const { Title } = Typography;
 
 interface Report {
   id: number;
-  month: string; // Ví dụ: "2025-07"
+  month: string;
   totalOrders: number;
   totalRevenue: number;
   bestSellingProduct: string;
